@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "./component/navbar/Navbar";
 import NavHeader from "./component/navbar/NavHeader";
+import Footer from "./component/footer/Footer";
 
 export default function RootLayout({
   children,
@@ -9,11 +10,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` w-full`}>
-        <NavHeader />
+      <body style={{ backgroundColor: "#FFF8E1" }}>
         <Navbar />
-
         {children}
+        <Footer />
       </body>
     </html>
   );

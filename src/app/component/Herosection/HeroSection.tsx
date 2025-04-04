@@ -1,114 +1,70 @@
-"use client";
+import React from "react";
+import ButtonText from "../common/button/ButtonText";
+import ButtonWhiteText from "../common/button/ButtonWhiteText";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
+const data = [
+  {
+    number: "99%",
+    title: "Tax Consultations",
+  },
+  {
+    number: "91%",
+    title: "Budget Management",
+  },
+];
 
-import "swiper/css";
-import "swiper/css/effect-fade";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
-import ServiceSection from "../service-section/ServiceSection";
-import LearnMore from "../homesection/LearnMore";
-
-export default function EnhancedHeroSection() {
-  const slides = [
-    {
-      image:
-        "https://images.pexels.com/photos/164686/pexels-photo-164686.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Financial ",
-      spanTitle: "Integrity",
-      subtitle: "Building trust through transparency",
-      description:
-        "Our commitment to financial transparency builds trust with clients and stakeholders alike.",
-      cta: "Learn More",
-      ctaSecondary: "Contact Us",
-    },
-    {
-      image:
-        "https://images.pexels.com/photos/8962476/pexels-photo-8962476.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Comprehensive Audit ",
-      spanTitle: "Services",
-      subtitle: "Tailored solutions for your business",
-      description:
-        "We provide customized audit solutions to address your unique business challenges and goals.",
-      cta: "Our Services",
-      ctaSecondary: "Get a Quote",
-    },
-    {
-      image:
-        "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Loremm",
-      spanTitle: "Title",
-      subtitle: "  Lorem ipsum dolor sit amet consectetur",
-      description:
-        "   Repudiandae fugiat, soluta ducimus dolore in ex pariatur. Officiis aspernatur dolore ad eum omnis.",
-      cta: "Our Lorem",
-      ctaSecondary: "Cta Section",
-    },
-  ];
-
+const HeroSection = () => {
   return (
-    <>
-      <div className="relative h-screen overflow-hidden mb-16">
-        <Swiper
-          modules={[Autoplay, EffectFade, Navigation, Pagination]}
-          pagination={{ type: "bullets" }}
-          navigation={true}
-          effect="fade"
-          speed={1500}
-          loop={true}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          className="w-full h-full"
-        >
-          {slides.map((slide, index) => (
-            <SwiperSlide key={index}>
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-10000 "
-                style={{
-                  backgroundImage: `url(${slide.image})`,
-                }}
-              />
+    <div className="flex mt-20  max-w-7xl mx-auto">
+      <div className=" lg:w-1/2 flex flex-col gap-10">
+        <div className="">
+          <button className="px-4 py-2 max-w-max rounded-lg bg-white text-sm font-bold text-level">
+            {" "}
+            Your Success, Our Priority
+          </button>
+          <p className="text-5xl font-bold  mt-3 leading-12 text-gray-700">
+            {" "}
+            Transform Your Business With Expert Accounting Services
+          </p>
+        </div>
 
-              <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
+        <p className=" text-base font-normal">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam
+          praesentium veniam nemo. Voluptatem laudantium maiores quas animi
+          amet. Laborum reiciendis totam in impedit quibusdam ab neque illum
+          voluptate magni libero.
+        </p>
+        <div className="flex gap-6">
+          <ButtonText name="Get Started" />
 
-              <div className="relative z-20 flex flex-col h-full justify-center px-8 md:px-16 lg:px-24 xl:px-32">
-                <div className="max-w-3xl">
-                  <h2 className="font-light text-white/90 text-lg md:text-2xl mb-4 transition-all duration-1000 ">
-                    {slide.subtitle}
-                  </h2>
-
-                  <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight transition-all duration-1000">
-                    {slide.title}
-                    <span className="text-secondary">{slide.spanTitle}</span>
-                  </h1>
-
-                  <p className="text-white/80 text-base md:text-lg mb-8 max-w-xl transition-all duration-1000 delay-200 ">
-                    {slide.description}
-                  </p>
-
-                  <div className="flex gap-4 transition-all duration-700 delay-300">
-                    <button className="flex items-center bg-secondary text-white font-medium py-3 px-8 rounded-full transition-all duration-300 gap-2">
-                      {slide.cta}
-                      <BsArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-                    </button>
-
-                    <button className="border-1 border-white text-white font-medium py-3 px-8 rounded-full transition-all duration-300 gap-2">
-                      {slide.ctaSecondary}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+          <ButtonWhiteText name="Get Started" />
+        </div>
       </div>
 
-      <ServiceSection />
-      <LearnMore />
-    </>
+      <div className="lg:w-1/2 relative ml-44">
+        <div className="absolute w-64 h-64 bg-level rounded-full -top-12 -right-6 z-0"></div>
+        <div className=""></div>
+        <div className="relative z-10">
+          <div className="bg-white flex flex-col gap-3  rounded-lg shadow-lg  p-4 absolute -left-20 bottom-10 z-20 max-w-max">
+            {data.map((value) => (
+              <>
+                <div className="flex items-center justify-between gap-10">
+                  <p className="text-base font-normal">{value.title}</p>
+                  <p className="text-xs ">{value.number}</p>
+                </div>
+                <div className="bg-black h-2 w-full rounded-xl"></div>
+              </>
+            ))}
+          </div>
+          <img
+            src="https://images.pexels.com/photos/7698834/pexels-photo-7698834.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Accounting professionals"
+            className="rounded-lg shadow-xl relative z-10 object-cover w-full h-full"
+          />
+        </div>
+      </div>
+    </div>
   );
-}
+};
+
+export default HeroSection;

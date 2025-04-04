@@ -40,7 +40,7 @@ const NavHeader = () => {
               <span>Login/Register</span>
             </Link>
 
-            <button className="px-3 py-2 h-full text-xl bg-secondary text-seto">
+            <button className="px-3 py-2 h-full text-xl bg-level text-white">
               Contact Us
             </button>
           </div>

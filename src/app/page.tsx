@@ -1,4 +1,9 @@
 import HeroSection from "./component/Herosection/HeroSection";
+import LearnMore from "./component/homesection/LearnMore";
+import PremiumSection from "./component/homesection/PremiumSection";
+import Testimonial from "./component/homesection/Testimonial";
+import Trust from "./component/homesection/Trust";
+import ServiceSection from "./component/service-section/ServiceSection";
 
 export default function Home() {
   return (
@@ -102,7 +107,16 @@ export default function Home() {
     // <Navbar />
     // <div className="text-black">GGMU</div>
     <>
-      <HeroSection />
+      <div className="#FFF8E1">
+        <ServiceSection />
+        <Trust />
+        <PremiumSection
+          title="Looking for premium accounting for your business ?"
+          cta="Get Started"
+        />
+        <LearnMore />
+        <Testimonial />
+      </div>
     </>
   );
 }

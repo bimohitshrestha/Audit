@@ -4,6 +4,8 @@ import Link from "next/link";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
+import HeroSection from "../Herosection/HeroSection";
+import ButtonText from "../common/button/ButtonText";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,16 +36,16 @@ export default function Navbar() {
   }, [scrolled]);
 
   const navigationItems = [
-    { href: "/homepage", label: "Home" },
+    { href: "", label: "Home" },
     { href: "", label: "Services" },
-    { href: "/homepage/blog", label: "Blogs" },
-    { href: "/homepage/career", label: "Careers" },
-    { href: "/homepage/contact-us", label: "Contact" },
+    { href: "", label: "Blogs" },
+    { href: "", label: "Careers" },
+    { href: "", label: "Contact" },
   ];
 
   return (
     <nav
-      className={` w-full z-50 transition-all duration-300 py-1 bg-white text-kalo font-bold`}
+      className={` h-screen transition-all duration-300 p-6  bg-amber-100 rounded-3xl m-8  text-kalo font-bold`}
     >
       <div className=" px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
@@ -60,14 +62,14 @@ export default function Navbar() {
             </div>
           </Link>
 
-          <div className="hidden md:flex flex-grow justify-end">
+          <div className="hidden md:flex flex-grow justify-center">
             <div className="flex space-x-5">
               {navigationItems.map(({ href, label }) => {
                 const isActive = activeItem === href;
                 return (
-                  <Link key={href} href={href}>
+                  <Link key={href} href="">
                     <div
-                      className={`relative px-4 py-2 rounded-md text-lg font-medium hover:text-rato transition-all duration-200 `}
+                      className={`relative px-4 py-2 rounded-md text-lg font-medium hover:text-level transition-all duration-200 `}
                       onClick={() => setActiveItem(href)}
                     >
                       {label}
@@ -86,6 +88,8 @@ export default function Navbar() {
               })}
             </div>
           </div>
+
+          <ButtonText name="Sign in" />
 
           <div className="md:hidden">
             <button
@@ -106,6 +110,14 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+
+      {/* <div className="flex mt-20"> */}
+      {/* <div className="w-full lg:w-1/2">
+       <h3 className="text-black"> </h3>
+       </div> */}
+
+      <HeroSection />
+      {/* </div> */}
 
       <AnimatePresence>
         {isMenuOpen && (
