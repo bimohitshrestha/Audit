@@ -13,7 +13,7 @@ const ButtonText: React.FC<ButtonTextInterface> = ({
 }) => {
   return (
     <button
-      className="bg-level  text-white px-6 py-3 rounded-lg transition duration-300 cursor-pointer"
+      className="bg-level  text-white px-6 py-3 rounded-lg  transition duration-300 cursor-pointer font-serif mt-4 sm:mt-0 sm:ml-6"
       onClick={onClick}
       type={type}
     >

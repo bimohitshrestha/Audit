@@ -48,8 +48,8 @@ const CountUp: React.FC<CountUpProps> = ({
 
   return (
     <motion.div>
-      {count}
-      {suffix}
+      {count || ""}
+      {suffix || ""}
     </motion.div>
   );
 };

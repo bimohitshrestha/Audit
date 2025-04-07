@@ -20,7 +20,7 @@
   --color-avocado-500: oklch(0.84 0.18 117.33);
   --color-avocado-600: oklch(0.53 0.12 118.34);
 
-  --color-primary:#f0a501;
+  --color-primary:#FFF8E1;
   --color-secondary:#3a8d99;
   --color-accent:#e60ed0;
   --color-level:#180447;
@@ -41,10 +41,14 @@
 
 
 .bg-custom-gradient {
-  background: linear-gradient(to bottom, #3a8d99, #f0a500);
+  background: linear-gradient(to right, #180447, #50993c);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.bg-gradient {
+  background: linear-gradient(to right, #ffffff, #001f3f, #3CB043);
 }
 
 .bg-custom-secondary {
