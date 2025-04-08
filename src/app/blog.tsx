@@ -44,7 +44,7 @@ const blogPosts = [
     id: 4,
     title: "Audit Automation: Tools and Technologies",
     description:
-      "Explore the latest automation tools that are transforming the audit process and increasing efficiency.",
+      "Explore the latest automation tools that are transforming the audit process and increasing efficiency.Explore the latest automation tools that are transforming the audit process and increasing efficiency.Explore the latest automation tools that are transforming the audit process and increasing efficiency.Explore the latest automation tools that are transforming the audit process and increasing efficiency.",
     category: "Technology",
     author: "Admin",
     date: "April 5, 2025",
@@ -91,42 +91,41 @@ const Blog = () => {
     return matchesCategory && matchesSearch;
   });
   return (
-    <div
-      className="min-h-screen bg-blue-100 rounded-md max-w-7xl mx-auto p-10"
-      id="blog"
-    >
-      <SearchBar
-        title="Audit Blogs"
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
-      />
+    <div className="  bg-blue-100 rounded-md mx-10 mb-32 " id="blog">
+      <div className="mx-10 py-10">
+        <SearchBar
+          title="Audit Blogs"
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+        />
 
-      <CategoryFilter
-        categories={categories}
-        selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-      />
+        <CategoryFilter
+          categories={categories}
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
 
-      <div className="container mx-auto px-4 py-8">
-        {filteredPosts.length === 0 ? (
-          <div className="text-center py-12">
-            <h3 className="text-xl font-medium text-gray-700">
-              No articles found matching your criteria
-            </h3>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts.map((post) => (
-              <div
-                key={post.id}
-                className="bg-white rounded-lg shadow-md overflow-hidden "
-              >
-                <ImageSection post={post} />
-                <PostDetails post={post} />
-              </div>
-            ))}
-          </div>
-        )}
+        <div className="">
+          {filteredPosts.length === 0 ? (
+            <div className="text-center py-12">
+              <h3 className="text-xl font-medium text-gray-700">
+                No articles found matching your criteria
+              </h3>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredPosts.map((post) => (
+                <div
+                  key={post.id}
+                  className="bg-white rounded-lg shadow-md overflow-hidden "
+                >
+                  <ImageSection post={post} />
+                  <PostDetails post={post} />
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

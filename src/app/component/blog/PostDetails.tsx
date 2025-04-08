@@ -18,7 +18,7 @@ interface PostDetailsProps {
 const PostDetails = ({ post }: PostDetailsProps) => {
   return (
     <div className="p-6">
-      <div className="flex items-center justify-between text-sm text-gray-600 mb-3">
+      <div className="flex items-center justify-between text-sm text-accent mb-3">
         <span>{post.date}</span>
         <span>{post.readTime}</span>
       </div>
@@ -31,7 +31,9 @@ const PostDetails = ({ post }: PostDetailsProps) => {
           {post.title}
         </Link>
       </h3>
-      <p className="text-gray-600 mb-4">{post.description}</p>
+      <p className="text-accent mb-4  min-h-max mx-auto line-clamp-3">
+        {post.description}
+      </p>
 
       <div className="flex items-center">
         <div className=" rounded-full bg-gray-400 mr-3">

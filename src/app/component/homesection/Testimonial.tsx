@@ -27,9 +27,9 @@ const Testimonial = () => {
   const { name, role, feedback } = testimonials[currentIndex];
 
   return (
-    <div className="py-12">
-      <div className="max-w-7xl mx-auto text-center px-4">
-        <div className="relative bg-white p-8 rounded-lg shadow-xl ">
+    <div className="mb-32 ">
+      <div className=" text-center py-4">
+        <div className="relative mx-10 py-10 rounded-lg shadow-xl ">
           <p className="text-xl font-normal text-gray-700  mb-4 max-w-[80%] mx-auto">
             {feedback}
           </p>
@@ -40,7 +40,7 @@ const Testimonial = () => {
               <p className="text-lg font-medium text-gray-500">{role}</p>
             </div>
 
-            <div className="absolute left-8 top-1/2 transform -translate-y-1/2 flex gap-2 z-10">
+            {/* <div className="absolute left-8 top-1/2 transform -translate-y-1/2 flex gap-2 z-10">
               <button
                 onClick={prevTestimonial}
                 className="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-600 focus:outline-none"
@@ -58,7 +58,7 @@ const Testimonial = () => {
               >
                 <FaChevronRight />
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

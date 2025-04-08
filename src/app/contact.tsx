@@ -176,7 +176,7 @@ export default function Contact() {
                       <h4 className="font-medium text-gray-900">
                         Office Address
                       </h4>
-                      <p className="text-gray-600 mt-1">Dillibazar,Kathmandu</p>
+                      <p className="text-accent mt-1">Dillibazar,Kathmandu</p>
                     </div>
                   </div>
 
@@ -184,7 +184,7 @@ export default function Contact() {
                     <BiPhone className="h-6 w-6 text-blue-800 mr-4 mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-medium text-gray-900">Phone</h4>
-                      <p className="text-gray-600 mt-1">
+                      <p className="text-accent mt-1">
                         <a
                           href="tel:+12125551234"
                           className="hover:text-blue-800"
@@ -199,7 +199,7 @@ export default function Contact() {
                     <RiMvAiLine className="h-6 w-6 text-blue-800 mr-4 mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-medium text-gray-900">Email</h4>
-                      <p className="text-gray-600 mt-1">
+                      <p className="text-accent mt-1">
                         <a
                           href="mailto:info@precisionaudit.com"
                           className="hover:text-blue-800"

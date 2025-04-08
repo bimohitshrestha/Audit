@@ -12,7 +12,7 @@ const Toast: React.FC<ToastProps> = ({ message, onClose }) => {
   }, [onClose]);
 
   return (
-    <div className="fixed top-5 right-5 bg-green-500 text-white px-6 py-3 rounded-lg shadow-md max-w-md mx-auto">
+    <div className="fixed top-5 right-5 bg-green-500 text-white px-6 py-3 rounded-lg shadow-md max-w-md mx-auto z-999">
       <p>{message}</p>
     </div>
   );

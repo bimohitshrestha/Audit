@@ -15,7 +15,7 @@ const ImageSection = ({ post }: ImageSectionProps) => {
       <Image
         src={post.image}
         alt={post.title}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110"
         width={500}
         height={300}
       />

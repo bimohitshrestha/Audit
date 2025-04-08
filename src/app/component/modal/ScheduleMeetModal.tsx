@@ -6,6 +6,7 @@ import InputField from "../field/InputField";
 import SelectField from "../field/SelectField";
 import ButtonWhiteText from "../common/button/ButtonWhiteText";
 import Toast from "../common/toast/Toast";
+import ParagraphHeading from "../common/HeaderText/ParagraphHeading";
 
 interface ScheduleMeetModalProps {
   isOpen: boolean;
@@ -51,9 +52,17 @@ const ScheduleMeetModal: React.FC<ScheduleMeetModalProps> = ({
     e.preventDefault();
     console.log("Form submitted:", meetingData);
     onSubmit(meetingData);
-    setToastMessage(
-      "Meeting scheduled successfully! Our team will get back to you soon. Thank you for cooperating."
-    );
+    setToastMessage("");
+
+    setMeetingData({
+      title: "",
+      date: "",
+      startTime: "",
+      endTime: "",
+      description: "",
+      meetingType: "video",
+    });
+
     onClose();
   };
 
@@ -61,12 +70,13 @@ const ScheduleMeetModal: React.FC<ScheduleMeetModalProps> = ({
 
   return (
     <>
-      <div className="fixed inset-0 z-50 bg-opacity-50 flex items-center justify-center p-4">
+      <div className="fixed inset-0 z-50 bg-black/30  bg-opacity-100 flex items-center justify-center p-4">
         <div className="bg-white text-gray-800 rounded-lg shadow-xl w-full max-w-xl overflow-hidden">
           <div className="flex justify-between items-center p-5 border-b">
             <h3 className="text-xl font-semibold text-gray-900">
               Schedule a Meeting
             </h3>
+
             <button
               onClick={onClose}
               className="text-gray-500 hover:text-gray-900 transition-colors focus:outline-none cursor-pointer"

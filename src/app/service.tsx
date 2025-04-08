@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { TbCertificate, TbReportMoney, TbBuildingBank } from "react-icons/tb";
 import HeaderText from "./component/common/HeaderText/HeaderText";
 import Image from "next/image";
+import ParagraphHeading from "./component/common/HeaderText/ParagraphHeading";
 
 const ServicesSection = () => {
   const [activeService, setActiveService] = useState(1);
@@ -67,15 +68,16 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section className="mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col p-3 gap-20">
+    <section className="" id="service">
+      <div className="px-4 sm:px-6 lg:px-8 flex flex-col p-3 mb-32">
         {/* <HeaderText
           title="Our Services"
           required={true}
           description="Professional business registration,auditing , and financial services to help your business grow and succeed"
         /> */}
 
-        <div className="relative w-full h-[500px] rounded-lg overflow-hidden shadow-lg">
+        <div className="relative w-full h-[500px] rounded-lg overflow-hidden shadow-lg ">
+          <div className="absolute inset-0  bg-black  "></div>
           <Image
             src="/peoples.jpg"
             alt="Sample Image"
@@ -86,18 +88,19 @@ const ServicesSection = () => {
 
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent p-6 flex justify-between items-center">
             <div className="text-white w-[500px]">
-              <p className="text-4xl font-bold ">
-                Driving Growth Through Strategic Business Marketing
-              </p>
+              <ParagraphHeading
+                title="Driving Growth Through Strategic Business Marketing"
+                className="text-white"
+              />
             </div>
-            <div className="flex flex-col gap-5 text-white ">
-              <p className="text-2xl font-bold">10 Years</p>
+            <div className="flex flex-col gap-3 text-white ">
+              <p className="text-2xl font-bold">5 Years</p>
               <p className="font-medium">in accounting service</p>
             </div>
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-10 mb-16">
+        <div className="flex flex-col lg:flex-row gap-10 mt-8">
           <div className="w-full lg:w-1/3">
             <div className="bg-white rounded-2xl shadow-lg p-2 ">
               {services.map((service) => (
@@ -106,17 +109,17 @@ const ServicesSection = () => {
                   onClick={() => setActiveService(service.id)}
                   className={`w-full text-left p-4 mb-2 rounded-xl transition duration-300 ${
                     activeService === service.id
-                      ? "bg-level text-white shadow-md"
+                      ? "bg-level text-white text-base shadow-md"
                       : "hover:bg-gray-100"
                   }`}
                 >
                   <div className="flex flex-col space-y-1">
-                    <h3 className="font-bold">{service.title}</h3>
+                    <h3 className="font-medium">{service.title}</h3>
                     <p
                       className={`font-bold ${
                         activeService === service.id
                           ? "text-blue-100"
-                          : "text-gray-500"
+                          : "text-base  font-medium text-accent"
                       }`}
                     >
                       {service.titleNepali}
@@ -138,11 +141,11 @@ const ServicesSection = () => {
                           {service.icon}
                         </div>
                         <div className="flex flex-row items-center gap-4 ">
-                          <h3 className="text-2xl font-bold text-gray-800">
+                          <h3 className="text-2xl  text-secondary ">
                             {service.title}
                           </h3>
 
-                          <p className="text-lg font-bold text-gray-800">
+                          <p className="text-lg  text-secondary ">
                             {service.titleNepali}
                           </p>
                         </div>
@@ -152,11 +155,9 @@ const ServicesSection = () => {
                         {service.items.map((item, index) => (
                           <li key={index}>
                             {typeof item === "object" ? (
-                              <div className="flex flex-col">
+                              <div className="flex flex-col text-base  text-accent">
                                 <span>{item.english}</span>
-                                <span className="text-gray-500">
-                                  {item.nepali}
-                                </span>
+                                <span className="">{item.nepali}</span>
                               </div>
                             ) : (
                               item

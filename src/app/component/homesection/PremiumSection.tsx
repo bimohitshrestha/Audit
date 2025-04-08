@@ -22,9 +22,9 @@ const PremiumSection = ({ cta, title }: PremiumSectionProps) => {
   };
 
   return (
-    <section className="w-full h-auto bg-level text-white flex items-center justify-center py-8 sm:py-12">
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center w-full px-6">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center sm:text-left sm:w-[700px] mb-4 sm:mb-0 font-serif">
+    <section className="w-full h-auto  bg-level text-white flex items-center justify-center py-8 sm:py-12">
+      <div className="flex flex-col sm:flex-row justify-between items-center w-full mx-10">
+        <h2 className="text-3xl md:text-4xl lg:text-4xl  leading-tight md:leading-12 spaxe-x-2 sm:w-[700px] mb-4 sm:mb-0 ">
           {title}
         </h2>
         <ButtonWhiteText name={cta} onClick={() => setModalOpen(true)} />

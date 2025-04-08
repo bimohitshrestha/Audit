@@ -1,4 +1,5 @@
 import React from "react";
+import ParagraphHeading from "../common/HeaderText/ParagraphHeading";
 
 interface SearchBarInterface {
   title: string;
@@ -14,9 +15,10 @@ const SearchBar: React.FC<SearchBarInterface> = ({
   return (
     <div className="flex flex-row items-center justify-between ">
       <div className="mb-8">
-        <h1 className="text-xl md:text-2xl lg:text-4xl font-serif font-bold text-gray-700">
+        {/* <h1 className="text-xl md:text-2xl lg:text-4xl  font-bold text-gray-700">
           {title}
-        </h1>
+        </h1> */}
+        <ParagraphHeading title={title} />
       </div>
       <div className="max-w-md">
         <input

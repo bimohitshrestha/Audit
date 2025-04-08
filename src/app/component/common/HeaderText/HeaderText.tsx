@@ -15,13 +15,11 @@ const HeaderText = ({ title, description, required }: HeaderTextInterface) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <h2 className="text-level  text-4xl bg-clip-text font-bold font-serif">
-        {title}
-      </h2>
+      <h2 className="text-level  text-4xl bg-clip-text font-bold ">{title}</h2>
 
       {required && <div className="h-1 w-24 bg-level mx-auto mb-4"></div>}
 
-      <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+      <p className="mt-4 text-lg text-accent max-w-2xl mx-auto">
         {description || ""}
       </p>
     </motion.div>
